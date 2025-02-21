@@ -1,6 +1,6 @@
-(function () {
-    const locomotiveScroll = new LocomotiveScroll();
-})();
+
+const locomotiveScroll = new LocomotiveScroll();
+
 
 var cursor = document.querySelector(".main .cursor");
 var page = document.querySelector(".main");
@@ -320,6 +320,7 @@ function featured_Textanimation(){
     gsap.from(".featured-section .heading .row1 h1",{
         scrollTrigger:{
             trigger:".featured-section",
+            scroller:"body",
             start: "top 50%",
         },
         
@@ -330,6 +331,7 @@ function featured_Textanimation(){
     gsap.from(".featured-section .heading .row2 h1",{
         scrollTrigger:{
             trigger:".featured-section",
+            scroller:"body",
             start: "top 50%",
         },
         
@@ -343,6 +345,7 @@ function development_textAnimation(){
     var devtl = gsap.timeline({
         scrollTrigger:{
             trigger:".development_heading",
+            scroller:"body",
             start: "top 50%",
         },
     })
@@ -369,6 +372,7 @@ development_textAnimation();
 gsap.from(".video-overlay h1",{
     scrollTrigger:{
         trigger:"footer",
+        scroller:"body",
         start: "top 50%",
   
     },

@@ -1,23 +1,21 @@
 @font-face {
-    font-family: matterregular;
+    font-family: matter;
     src: url(fonts/matter-regular.ttf);
+    font-weight: 300; 
 }
 
 @font-face {
-    font-family: matterlight;
-    src: url(fonts/matter-light.ttf);
-}
-
-@font-face {
-    font-family: roboto;
-    src: url(fonts/roboto-flex-latin.ttf);
+    font-family: matter;
+    src: url(fonts/matter-regular.ttf);
+    font-weight: 400;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: matterlight;
+    font-family: matter;
+    font-weight: 300;
 }
 
 a{
@@ -32,12 +30,6 @@ html,body{
 body{
     overflow-x: hidden;
     background-color: #161616;
-}
-
-.main{
-    overflow-x: hidden;
-    width: 100vw;
-
 }
 
 
@@ -405,7 +397,7 @@ font-weight: 500;
 }
 
 .button-text{
-    height: 5vh;
+    height: 4.5vh;
     overflow: hidden;
     position: absolute;
     z-index: 5;
@@ -488,22 +480,23 @@ font-weight: 500;
     gap: 5vw;
 }
 
-.featured-section .featured-content .col1{
+.featured-section .featured-content .col1, 
+.featured-section .featured-content .col2 {
     display: flex;
     flex-direction: column;
     gap: 2vw;
     margin-top: 20vw;
+    flex-shrink: 0;
 }
 
-
-.featured-content .col1 .content{
+.featured-content .col1 .content,
+.featured-content .col2 .content {
     width: 30vw;
     height: fit-content;
-   display: flex;
-   flex-direction: column;
-   line-height: 1.8vw;
-   position: relative;
-   
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8vw;
+    position: relative;
 }
 
 .featured-content .col1 .content video{
@@ -532,76 +525,6 @@ font-weight: 500;
 
 .featured-content .col1 .content p span{
     font-weight: 600;
-}
-
-.featured-section .featured-content .col1{
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-    margin-top: 20vw;
-    flex-shrink: 0;
-}
-
-
-.featured-content .col1 .content{
-    width: 30vw;
-    height: fit-content;
-   display: flex;
-   flex-direction: column;
-   line-height: 1.8vw;
-   position: relative;
-   
-}
-
-.featured-content .col1 .content video{
-    width: 100%;
-    height: 90%;
-    border-radius: 3vw;
-    margin-bottom: 3vw;
-}
-
-.featured-content .col1 .content img{
-    border-radius: 3vw;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.featured-content .col1 .content img:hover{
-    opacity: 0;
-    transition: all ease 0.2s;
-}
-
- .featured-content .col1 .content p{
-    font-size: 1.5vw;
-}
-
-.featured-content .col1 .content p span{
-    font-weight: 600;
-}
-
-
-
-
-
-.featured-section .featured-content .col2{
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-    margin-top: 40vw;
-    flex-shrink: 0;
-}
-
-
-.featured-content .col2 .content{
-    width: 30vw;
-    height: fit-content;
-   display: flex;
-   flex-direction: column;
-   line-height: 1.8vw;
-   position: relative;
-   
 }
 
 .featured-content .col2 .content video{
@@ -696,9 +619,10 @@ font-weight: 500;
 }
 
 .development-section{
+   height: 200vh;
     width: 100vw;
-    min-height: 100vh;
     background-color: #ffffff;
+    overflow: hidden;
 }
 
 .development-section .development_heading{
@@ -726,7 +650,7 @@ font-weight: 500;
     height: 10vw;
     font-size: 9vw;
     color: #fff;
-    font-family: matterlight ;
+    font-family: matter;
     font-weight: 500;
     letter-spacing: -0.5vw;
     display: flex;
@@ -834,16 +758,17 @@ color:black;
 
 
   footer{
+    height:100vh;
     width: 100vw;
-    height: 100vh;
     position: relative;
   }
 
   footer .wrapped-video{
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     object-fit: cover;
     object-position: center;
+    overflow: hidden;
   }
 
   footer .wrapped-video video{
@@ -852,14 +777,16 @@ color:black;
 
   footer .video-overlay{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    bottom: 0;
   }
 
   footer .video-overlay .row1{
     width: 100%;
-    height: 80%;
+    min-height: 80vh;
     position: absolute;
     top:0;
     left: 0;
@@ -927,7 +854,7 @@ color:black;
 
   footer .video-overlay .row2{
     width: 100%;
-    height: 10vw;
+    height: 8vw;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -939,7 +866,7 @@ color:black;
     height: 5vw;
     display: flex;
     gap:3vw;
-    padding: 4vw 7vw;
+    padding: 0vw 7vw;
   }
 
   .video-overlay .row2 .part1>a{
@@ -1018,7 +945,7 @@ color:black;
     font-weight: 600;
     display: flex;
     align-items: center;
-    padding-top: 4vw;
+    padding-top: 0vw;
     position: relative;
     cursor: pointer;
   }
@@ -1038,5 +965,12 @@ color:black;
   }
   
 
+:root {
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+}
 
-  /*Starting Responsive Part*/
+.overlay {
+    transition: all 0.4s var(--ease-out);
+}
+  
