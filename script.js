@@ -1,7 +1,3 @@
-
-const locomotiveScroll = new LocomotiveScroll();
-
-
 var cursor = document.querySelector(".main .cursor");
 var page = document.querySelector(".main");
 var page2 = document.querySelector(".page2");
